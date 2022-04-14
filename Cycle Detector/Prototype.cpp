@@ -3,13 +3,12 @@
 #include <limits.h>
 using namespace std;
 
-class Graph
-{
+class Graph{
  
     int V;  
-
     list<int> *adj; 
     bool isCyclicUtil(int v, bool visited[], int parent);
+ 
 public:
 
     Graph(int V);  
@@ -18,55 +17,34 @@ public:
  
 };
  
-Graph::Graph(int V)
-{
+Graph::Graph(int V){
     this->V = V;
     adj = new list<int>[V];
 }
  
-void Graph::addEdge(int v, int w)
-{
+void Graph::addEdge(int v, int w){
     adj[v].push_back(w);
     adj[w].push_back(v);
 }
  
-// A recursive function that
-// uses visited[] and parent to detect
-// cycle in subgraph reachable
-// from vertex v.
-bool Graph::isCyclicUtil(int v,
-                bool visited[], int parent)
-{
-     
-    // Mark the current node as visited
+bool Graph::isCyclicUtil(int v, bool visited[], int parent){
+
     visited[v] = true;
  
-    // Recur for all the vertices
-    // adjacent to this vertex
     list<int>::iterator i;
-    for (i = adj[v].begin(); i !=
-                       adj[v].end(); ++i)
-    {
-         
-        // If an adjacent vertex is not visited,
-        //then recur for that adjacent
-        if (!visited[*i])
-        {
+    for (i = adj[v].begin(); i !=adj[v].end(); ++i){
+
+        if (!visited[*i]){
            if (isCyclicUtil(*i, visited, v))
               return true;
         }
- 
-        // If an adjacent vertex is visited and
-        // is not parent of current vertex,
-        // then there exists a cycle in the graph.
+
         else if (*i != parent)
            return true;
     }
     return false;
 }
  
-// Returns true if the graph contains
-// a cycle, else false.
 bool Graph::isCyclic()
 {
      
