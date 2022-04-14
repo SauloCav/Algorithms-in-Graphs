@@ -1,32 +1,21 @@
-// A C++ Program to detect
-// cycle in an undirected graph
 #include<iostream>
 #include <list>
 #include <limits.h>
 using namespace std;
- 
-// Class for an undirected graph
+
 class Graph
 {
-     
-    // No. of vertices
+ 
     int V;  
-   
-    // Pointer to an array
-    // containing adjacency lists
+
     list<int> *adj; 
-    bool isCyclicUtil(int v, bool visited[],
-                              int parent);
+    bool isCyclicUtil(int v, bool visited[], int parent);
 public:
-   
-    // Constructor
+
     Graph(int V);  
-   
-    // To add an edge to graph
     void addEdge(int v, int w);
-   
-    // Returns true if there is a cycle
     bool isCyclic(); 
+ 
 };
  
 Graph::Graph(int V)
@@ -37,11 +26,7 @@ Graph::Graph(int V)
  
 void Graph::addEdge(int v, int w)
 {
-     
-    // Add w to v’s list.
     adj[v].push_back(w);
-   
-    // Add v to w’s list.
     adj[w].push_back(v);
 }
  
