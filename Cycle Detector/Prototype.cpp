@@ -45,34 +45,24 @@ bool Graph::isCyclicUtil(int v, bool visited[], int parent){
     return false;
 }
  
-bool Graph::isCyclic()
-{
-     
-    // Mark all the vertices as not
-    // visited and not part of recursion
-    // stack
+bool Graph::isCyclic(){
+
     bool *visited = new bool[V];
     for (int i = 0; i < V; i++)
         visited[i] = false;
  
-    // Call the recursive helper
-    // function to detect cycle in different
-    // DFS trees
     for (int u = 0; u < V; u++)
     {
-       
-        // Don't recur for u if
-        // it is already visited
+
         if (!visited[u])
           if (isCyclicUtil(u, visited, -1))
              return true;
     }
     return false;
 }
+
+int main(){
  
-// Driver program to test above functions
-int main()
-{
     Graph g1(5);
     g1.addEdge(1, 0);
     g1.addEdge(0, 2);
