@@ -1,6 +1,8 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+#O objetivo basico é encontrar uma aresta de retorno para algum nó já visitado. 
+
 class Graph:
  
     def __init__(self, edges, numNodes):
@@ -12,7 +14,7 @@ class Graph:
             self.adjacencyList[source].append(destination)
             self.adjacencyList[destination].append(source)
 
-def DFS_Traversal(graph, v, visited, parent_node =- 1):
+def DFS_Traversal(graph, v, visited, parent_node =- 1): #Nó parente trata-se no nó anteriormente analizado
  
     visited[v] = True #Marca o nó atual como true
 
@@ -25,16 +27,19 @@ def DFS_Traversal(graph, v, visited, parent_node =- 1):
 
     return False
  
- 
 if __name__ == '__main__':
- 
-    edges = [ (0, 1), (0, 2), (2, 3), (2, 4), (3, 4) ] #Definição dos vertices
+    
+    #Com ciclo
+    edges = [ (0, 1), (0, 2), (2, 3), (2, 4), (2, 1) ] #Definição dos vertices
+
+    #Sem ciclo
+    #edges = [ (0, 1), (1, 3), (1, 4), (2, 4)] #Definição dos vertices
  
     numNodes = 5 #Numero de nós do grafo
 
     constructed_graph = Graph(edges, numNodes) #Os vértices e o número de nós são então enviados para a montagem do grafo
 
-    visited = [False] * numNodes #Passa os nós visitados e não visitados
+    visited = [False] * numNodes #Passa os nós como não visitados
 
     #DFS_Traversal é chamada
     if DFS_Traversal(constructed_graph, 0, visited):
