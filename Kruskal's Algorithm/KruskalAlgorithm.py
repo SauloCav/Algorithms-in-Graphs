@@ -1,6 +1,3 @@
-# Kruskal's algorithm in Python
-
-
 class Graph:
     def __init__(self, vertices):
         self.V = vertices
