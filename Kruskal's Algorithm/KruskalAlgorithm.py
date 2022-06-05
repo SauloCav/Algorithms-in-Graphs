@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 class Graph:
     def __init__(self, vertices):
         self.V = vertices
