@@ -3,13 +3,16 @@
 
 class Graph:
 
+	# Constrói o grafo
 	def __init__(self, V):
 		self.V = V
 		self.adj = [[] for i in range(V)]
 
+	# Adiciona arestas
 	def addEdge(self, u, v):
 		self.adj[u].append(v)
 
+	# Função auxiliar de isCyclic
 	def isCyclicUtil(self, v, visited, recStack):
 		visited[v] = True
 		recStack[v] = True
@@ -24,6 +27,7 @@ class Graph:
 		recStack[v] = False
 		return False
 
+	# Função que determina se o grafo é cíclico
 	def isCyclic(self):
 		visited = [False] * (self.V + 1)
 		recStack = [False] * (self.V + 1)
@@ -33,6 +37,7 @@ class Graph:
 					return True
 		return False
 	
+	#função auxiliar de countPaths
 	def countPathsUtil(self, u, d, visited, pathCount):
 		visited[u] = True
 
@@ -47,6 +52,7 @@ class Graph:
 
 		visited[u] = False
 
+	# Contador de caminhos
 	def countPaths(self, s, d):
 		visited = [False] * self.V
 
