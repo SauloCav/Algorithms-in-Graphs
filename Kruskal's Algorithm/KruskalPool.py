@@ -6,7 +6,6 @@ class Graph:
     def add_edge(self, u, v, w):
         self.graph.append([u, v, w])
  
- 
     def search(self, parent, i):
         if parent[i] == i:
             return i
