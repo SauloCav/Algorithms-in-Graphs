@@ -1,62 +1,75 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from collections import deque
-MAXN = 1000005
+class Graph:
 
-v = [[] for i in range(MAXN)]
+	def __init__(self, V):
+		self.V = V
+		self.adj = [[] for i in range(V)]
 
-def add_edge(a, b, fre):
+	def addEdge(self, u, v):
+		self.adj[u].append(v)
 
-	v[a].append(b)
-	fre[b] += 1
+	def isCyclicUtil(self, v, visited, recStack):
+		visited[v] = True
+		recStack[v] = True
 
-def topological_sorting(fre, n):
-	q = deque()
+		for neighbour in self.adj[v]:
+			if visited[neighbour] == False:
+				if self.isCyclicUtil(neighbour, visited, recStack) == True:
+					return True
+			elif recStack[neighbour] == True:
+				return True
+    
+		recStack[v] = False
+		return False
 
-	for i in range(n):
-		if (not fre[i]):
-			q.append(i)
+	def isCyclic(self):
+		visited = [False] * (self.V + 1)
+		recStack = [False] * (self.V + 1)
+		for node in range(self.V):
+			if visited[node] == False:
+				if self.isCyclicUtil(node,visited,recStack) == True:
+					return True
+		return False
 
-	l = []
+	def countPaths(self, s, d):
+		visited = [False] * self.V
 
-	while (len(q) > 0):
-		u = q.popleft()
+		pathCount = [0]
+		self.countPathsUtil(s, d, visited, pathCount)
+		return pathCount[0]
 
-		l.append(u)
+	def countPathsUtil(self, u, d,
+					visited, pathCount):
+		visited[u] = True
 
-		for i in range(len(v[u])):
-			fre[v[u][i]] -= 1
+		if (u == d):
+			pathCount[0] += 1
 
-			if (not fre[v[u][i]]):
-				q.append(v[u][i])
-	return l
+		else:
 
-def numberofPaths(source, destination, n, fre):
+			i = 0
+			while i < len(self.adj[u]):
+				if (not visited[self.adj[u][i]]):
+					self.countPathsUtil(self.adj[u][i], d,
+										visited, pathCount)
+				i += 1
 
-	s = topological_sorting(fre, n)
+		visited[u] = False
 
-	dp = [0]*n
-
-	dp[destination] = 1
-
-	for i in range(len(s) - 1,-1,-1):
-		for j in range(len(v[s[i]])):
-			dp[s[i]] += dp[v[s[i]][j]]
-	return dp
 
 if __name__ == '__main__':
 
-	n = 5
-	source, destination = 0, 4
+	g = Graph(4)
+	g.addEdge(0, 1)
+	g.addEdge(0, 2)
+	g.addEdge(0, 3)
+	g.addEdge(1, 3)
 
-	fre = [0]*n
-
-	add_edge(0, 1, fre)
-	add_edge(0, 2, fre)
-	add_edge(0, 3, fre)
-	add_edge(0, 4, fre)
-	add_edge(2, 3, fre)
-	add_edge(3, 4, fre)
-
-	print (numberofPaths(source, destination, n, fre))
+	if g.isCyclic() == 1:
+		print ("Graph has a cycle")
+	else:
+		source = 0
+		destination = 3
+		print(g.countPaths(source, destination))

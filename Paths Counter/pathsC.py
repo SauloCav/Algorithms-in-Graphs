@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 class AjLinkeNode:
   def __init__(self,data):
     self.id=data
@@ -117,7 +120,6 @@ def main():
   g.addEdge(3, 5) 
   g.addEdge(5, 4) 
   g.printGraph()
-
 
   destination = 4
   g.total_path(source,destination)

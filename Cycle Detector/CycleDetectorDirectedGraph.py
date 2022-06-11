@@ -42,7 +42,8 @@ g.addEdge(1, 2)
 g.addEdge(2, 0)
 g.addEdge(2, 3)
 g.addEdge(3, 3)
+
 if g.isCyclic() == 1:
-	print "Graph has a cycle"
+	print ("Graph has a cycle")
 else:
-	print "Graph has no cycle"
+	print ("Graph has no cycle")
