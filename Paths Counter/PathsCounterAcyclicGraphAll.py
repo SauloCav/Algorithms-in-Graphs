@@ -1,6 +1,8 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from itertools import permutations
+
 class Graph:
 
 	def __init__(self, V):
@@ -57,7 +59,9 @@ class Graph:
 
 if __name__ == '__main__':
 
-	g = Graph(4)
+	numNodes = 4
+
+	g = Graph(numNodes)
 	g.addEdge(0, 1)
 	g.addEdge(0, 2)
 	g.addEdge(0, 3)
@@ -66,6 +70,11 @@ if __name__ == '__main__':
 	if g.isCyclic() == 1:
 		print ("Graph has a cycle")
 	else:
-		source = 0
-		destination = 3
-		print(g.countPaths(source, destination))
+
+		comb = permutations([0, 1, 2, 3], 2)
+		numPaths = 0
+
+		for i in list(comb):
+			numPaths = numPaths + (g.countPaths(i[0], i[1]))
+		
+		print("Total de Caminhos: ", numPaths)
