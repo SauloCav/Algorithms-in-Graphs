@@ -25,19 +25,16 @@ class Graph:
 			parent[xroot] = yroot
 		elif rank[xroot] > rank[yroot]:
 			parent[yroot] = xroot
-
 		else:
 			parent[yroot] = xroot
 			rank[xroot] += 1
 
 	def KruskalMST(self):
-
 		result = [] 
 		i = 0
 		e = 0
 
-		self.graph = sorted(self.graph,
-							key=lambda item: item[2])
+		self.graph = sorted(self.graph, key=lambda item: item[2])
 
 		parent = []
 		rank = []
@@ -47,7 +44,6 @@ class Graph:
 			rank.append(0)
 
 		while e < self.V - 1:
-
 			u, v, w = self.graph[i]
 			i = i + 1
 			x = self.find(parent, u)
@@ -58,17 +54,19 @@ class Graph:
 				result.append([u, v, w])
 				self.union(parent, rank, x, y)
 
-		minimumCost = 0
-		print ("Edges in the constructed MST")
+		mstWeight = 0
+		print ("MST edges:")
 		for u, v, weight in result:
-			minimumCost += weight
-			print("%d -- %d == %d" % (u, v, weight))
-		print("Minimum Spanning Tree" , minimumCost)
+			mstWeight += weight
+			print("%d, %d - %d" % (u, v, weight))
 
-g = Graph(3)
-g.addEdge(0, 1, 4)
-g.addEdge(0, 2, 5)
-g.addEdge(2, 1, 2)
-g.addEdge(1, 2, -4)
+		print("MST Weight: " , mstWeight)
+
+g = Graph(4)
+g.addEdge(0, 1, 10)
+g.addEdge(0, 2, 6)
+g.addEdge(0, 3, 5)
+g.addEdge(1, 3, 15)
+g.addEdge(2, 3, 4)
 
 g.KruskalMST()
