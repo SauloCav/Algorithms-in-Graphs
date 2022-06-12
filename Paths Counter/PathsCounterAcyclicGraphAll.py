@@ -82,6 +82,5 @@ if __name__ == '__main__':
 
 		for i in list(perm):
 			numPaths = numPaths + (g.countPaths(i[0], i[1]))
-			print(i)
 		
 		print("Total de Caminhos: ", numPaths)
