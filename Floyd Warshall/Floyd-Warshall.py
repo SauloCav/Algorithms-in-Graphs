@@ -9,16 +9,12 @@ def floydWarshall(graph):
 	dist = list(map(lambda i: list(map(lambda j: j, i)), graph))
 
 	for k in range(V):
-
 		for i in range(V):
-
 			for j in range(V):
-
 				dist[i][j] = min(dist[i][j],mdist[i][k] + dist[k][j])
+				
 	printSolution(dist)
 
-
-# A utility function to print the solution
 def printSolution(dist):
 	print ("Following matrix shows the shortest distances\
 between every pair of vertices")
@@ -31,23 +27,10 @@ between every pair of vertices")
 			if j == V-1:
 				print ()
 
-
-# Driver program to test the above program
-# Let us create the following weighted graph
-"""
-			10
-	(0)------->(3)
-		|		 /|\
-	5 |		 |
-		|		 | 1
-	\|/		 |
-	(1)------->(2)
-			3		 """
 graph = [[0, 5, INF, 10],
 		[INF, 0, 3, INF],
 		[INF, INF, 0, 1],
 		[INF, INF, INF, 0]
 		]
-# Print the solution
+
 floydWarshall(graph)
-# This code is contributed by Mythri J L
