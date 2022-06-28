@@ -1,6 +1,3 @@
-#! /usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 grafo = {
  'A' : ['B','C'],
  'B' : ['D', 'E'],
@@ -10,8 +7,8 @@ grafo = {
  'F' : []
 }
 
-visitados = [] #Inicializando a lista de vértices visitados
-fila = [] #Inicializando a fila
+visitados = []
+fila = []
 
 def bfs(visitados, grafo, no):
     visitados.append(no)
