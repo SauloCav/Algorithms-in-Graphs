@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 import decimal
 
 def EdmondsKarp(E, C, s, t):
@@ -35,3 +38,10 @@ def BFSEK(E, C, s, t, F, P, M, BFSq):
                 else:
                     return M[t], P
     return 0, P
+
+E = [[1, 2], [2, 3], [3], []]
+C = [[0, 1000000, 1000000, 0], [0, 0, 1, 1000000], [0, 0, 0, 1000000], [0, 0, 0, 0]]
+s = 0
+t = 3
+
+print(EdmondsKarp(E, C, s, t))
