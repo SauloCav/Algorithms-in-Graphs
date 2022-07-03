@@ -18,6 +18,7 @@ def EdmondsKarp(E, C, s, t):
         if pathFlow == 0:
             break
         flow = flow + pathFlow
+        print("Fluxo do caminho: ",pathFlow)
         v = t
         while v != s:
             u = P[v]
@@ -44,4 +45,4 @@ C = [[0, 16, 13, 0, 0, 0], [0, 0, 0, 12, 0, 0], [0, 4, 0, 0, 14, 0], [0, 0, 9, 0
 s = 0
 t = 5
 
-print(EdmondsKarp(E, C, s, t))
+print("Fluxo total: ", EdmondsKarp(E, C, s, t))
