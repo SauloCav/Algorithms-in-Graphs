@@ -1,5 +1,3 @@
-// C++ implementation of Hopcroft Karp algorithm for
-// maximum matching
 #include<bits/stdc++.h>
 using namespace std;
 #define NIL 0
