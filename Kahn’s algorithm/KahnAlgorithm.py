@@ -2,8 +2,8 @@ from collections import defaultdict
 
 class Graph:
 	def __init__(self, vertices):
-		self.graph = defaultdict(list) # dictionary containing adjacency List
-		self.V = vertices # No. of vertices
+		self.graph = defaultdict(list)
+		self.V = vertices
 
 	def addEdge(self, u, v):
 		self.graph[u].append(v)
@@ -22,17 +22,14 @@ class Graph:
 				queue.append(i)
 
 		cnt = 0
-
 		top_order = []
 
 		while queue:
-
 			u = queue.pop(0)
 			top_order.append(u)
 
 			for i in self.graph[u]:
 				in_degree[i] -= 1
-				# If in-degree becomes zero, add it to queue
 				if in_degree[i] == 0:
 					queue.append(i)
 
