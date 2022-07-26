@@ -31,7 +31,10 @@ The Dijkstra algorithm uses labels that are positive integers or real numbers, w
 ## Hopcroft Karp
 
 
-## Johnson's algorithm
+## Johnson
+Johnson's algorithm is a way to find the shortest paths between all pairs of vertices in an edge-weighted directed graph. It allows some of the edge weights to be negative numbers, but no negative-weight cycles may exist. It works by using the Bellman–Ford algorithm to compute a transformation of the input graph that removes all negative weights, allowing Dijkstra's algorithm to be used on the transformed graph. It is named after Donald B. Johnson, who first published the technique in 1977.
+
+A similar reweighting technique is also used in Suurballe's algorithm for finding two disjoint paths of minimum total length between the same two vertices in a graph with non-negative edge weights.
 
 
 ## Kahn’s algorithm
