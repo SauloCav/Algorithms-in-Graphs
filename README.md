@@ -37,7 +37,11 @@ Johnson's algorithm is a way to find the shortest paths between all pairs of ver
 A similar reweighting technique is also used in Suurballe's algorithm for finding two disjoint paths of minimum total length between the same two vertices in a graph with non-negative edge weights.
 
 
-## Kahn’s algorithm
+## Kahn
+Steps involved in finding the topological ordering of a DAG: 
+- Step-1: Compute in-degree (number of incoming edges) for each of the vertex present in the DAG and initialize the count of visited nodes as 0.
+- Step-2: Pick all the vertices with in-degree as 0 and add them into a queue (Enqueue operation)
+- Step-3: Remove a vertex from the queue (Dequeue operation) and then. 
 
 
 ## Kosaraju's algorithm
