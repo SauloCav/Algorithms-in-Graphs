@@ -30,6 +30,7 @@ In computer science, the Floyd–Warshall algorithm (also known as Floyd's algor
 
 
 ## Hopcroft Karp
+In computer science, the Hopcroft–Karp algorithm (sometimes more accurately called the Hopcroft–Karp–Karzanov algorithm) is an algorithm that takes a bipartite graph as input and produces a maximum cardinality matching as output – a set of as many edges as possible with the property that no two edges share an endpoint.
 
 
 ## Johnson
