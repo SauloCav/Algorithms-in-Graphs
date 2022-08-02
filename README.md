@@ -10,6 +10,7 @@ Negative edge weights are found in various applications of graphs, hence the use
 
 
 ## Cycle Detector
+In graph theory, a circle graph is the intersection graph of a chord diagram. That is, it is an undirected graph whose vertices can be associated with a finite system of chords of a circle such that two vertices are adjacent if and only if the corresponding chords cross each other.
 
 
 ## Dijkstra
