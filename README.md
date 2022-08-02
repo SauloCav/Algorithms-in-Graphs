@@ -24,7 +24,7 @@ The Dijkstra algorithm uses labels that are positive integers or real numbers, w
 
 
 ## Edmonds Karp
-
+In computer science, the Edmonds–Karp algorithm is an implementation of the Ford–Fulkerson method for computing the maximum flow in a flow network. The algorithm was first published by Yefim Dinitz (whose name is also transliterated "E. A. Dinic", notably as author of his early papers) in 1970 and independently published by Jack Edmonds and Richard Karp in 1972.
 
 ## Floyd Warshall
 In computer science, the Floyd–Warshall algorithm (also known as Floyd's algorithm, the Roy–Warshall algorithm, the Roy–Floyd algorithm, or the WFI algorithm) is an algorithm for finding shortest paths in a directed weighted graph with positive or negative edge weights (but with no negative cycles). A single execution of the algorithm will find the lengths (summed weights) of shortest paths between all pairs of vertices. Although it does not return details of the paths themselves, it is possible to reconstruct the paths with simple modifications to the algorithm. Versions of the algorithm can also be used for finding the transitive closure of a relation {\displaystyle R}R, or (in connection with the Schulze voting system) widest paths between all pairs of vertices in a weighted graph.
@@ -56,6 +56,7 @@ Kruskal's algorithm finds a minimum spanning forest of an undirected edge-weight
 
 
 ## Paths Counter
+In graph theory, a path in a graph is a finite or infinite sequence of edges which joins a sequence of vertices which, by most definitions, are all distinct (and since the vertices are distinct, so are the edges). A directed path (sometimes called dipath) in a directed graph is a finite or infinite sequence of edges which joins a sequence of distinct vertices, but with the added restriction that the edges be all directed in the same direction.
 
 
 ## Prim
