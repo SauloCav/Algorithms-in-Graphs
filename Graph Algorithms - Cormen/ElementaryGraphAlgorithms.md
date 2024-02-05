@@ -28,9 +28,10 @@
   - Viterbi algorithm solves the shortest stochastic path problem with an additional probabilistic weight on each node.
 
 ## Depth-first search
-
-
-
+- The strategy followed by depth-first search is, as its name implies, to search “deeper” in the graph whenever possible.
+- Depth-first search explores edges out of the most recently discovered vertex  that still has unexplored edges leaving it. Once all of ’s edges have been explored, the search “backtracks” to explore edges leaving the vertex from which  was discovered.
+- This process continues until we have discovered all the vertices that are reachable from the original source vertex. If any undiscovered vertices remain, then depth-first search selects one of them as a new source, and it repeats the search from that source.
+- The algorithm repeats this entire process until it has discovered every vertex.
 
 ## Topological sort
 
