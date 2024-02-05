@@ -34,8 +34,9 @@
 - The algorithm repeats this entire process until it has discovered every vertex.
 
 ## Topological sort
-
-
+- we can use depth-first search to perform a topological sort of a directed acyclic graph, or a “dag” as it is sometimes called.
+- A topological sort of a dag G D .V; E/ is a linear ordering of all its vertices such that if G contains an edge .u; /, then u appears before  in the ordering. (If the graph contains a cycle, then no linear ordering is possible.)
+- We can perform a topological sort in time ‚.V C E/, since depth-first search takes ‚.V C E/ time and it takes O.1/ time to insert each of the jV j vertices onto the front of the linked list.
 
 ## Strongly connected components
 
