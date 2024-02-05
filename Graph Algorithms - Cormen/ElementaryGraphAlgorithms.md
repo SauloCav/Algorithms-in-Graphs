@@ -1,7 +1,6 @@
 # Elementary Graph Algorithms
 
 ## Representations of graphs
-
 - We can choose between two standard ways to represent a graph G D .V; E/: as a collection of adjacency lists or as an adjacency matrix. Either way applies to both directed and undirected graphs.
 - Because the adjacency-list representation provides a compact way to represent sparse graphs—those for which jEj is much less than jV j 2 —it is usually the method of choice.
 - We may prefer an adjacency-matrix representation, however, when the graph is dense—jEj is close to jV j 2 —or when we need to be able to tell quickly if there is an edge connecting two given vertices.
@@ -13,15 +12,20 @@
 - Many other ways of implementing attributes are possible. For example, in an object-oriented programming language, vertex attributes might be represented as instance variables within a subclass of a Vertex class.
 
 ## Breadth-first search
-
 - Breadth-first search is one of the simplest algorithms for searching a graph and the archetype for many important graph algorithms.
 - Given a graph G D .V; E/ and a distinguished source vertex s, breadth-first search systematically explores the edges of G to “discover” every vertex that is reachable from s.
 - It computes the distance (smallest number of edges) from s to each reachable vertex.
 - It also produces a “breadth-first tree” with root s that contains all reachable vertices.
 - For any vertex  reachable from s, the simple path in the breadth-first tree from s to  corresponds to a “shortest path” from s to  in G, that is, a path containing the smallest number of edges.
 - The algorithm works on both directed and undirected graphs
-
-
+- In graph theory, the shortest path problem is the problem of finding a path between two vertices (or nodes) in a graph such that the sum of the weights of its constituent edges is minimized.
+- The most important algorithms for solving this problem are:
+  - Dijkstra's algorithm solves the single-source shortest path problem with non-negative edge weight.
+  - Bellman–Ford algorithm solves the single-source problem if edge weights may be negative.
+  - A* search algorithm solves for single-pair shortest path using heuristics to try to speed up the search.
+  - Floyd–Warshall algorithm solves all pairs shortest paths.
+  - Johnson's algorithm solves all pairs shortest paths, and may be faster than Floyd–Warshall on sparse graphs.
+  - Viterbi algorithm solves the shortest stochastic path problem with an additional probabilistic weight on each node.
 
 ## Depth-first search
 
