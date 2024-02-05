@@ -39,7 +39,8 @@
 - We can perform a topological sort in time ‚.V C E/, since depth-first search takes ‚.V C E/ time and it takes O.1/ time to insert each of the jV j vertices onto the front of the linked list.
 
 ## Strongly connected components
-
+- Our algorithm for finding strongly connected components of a graph G D .V; E/ uses the transpose of G, which we defined in Exercise 22.1-3 to be the graph GT D .V; ET/, where ET D f.u; / W .; u/ 2 Eg. That is, ET consists of the edges of G with their directions reversed.
+- Given an adjacency-list representation of G, the time to create GT is O.V C E/. It is interesting to observe that G and GT have exactly the same strongly connected components: u and  are reachable from each other in G if and only if they are reachable from each other in GT. Figure 22.9(b) shows the transpose of the graph in Figure 22.9(a), with the strongly connected components shaded.
 
 
 
