@@ -15,7 +15,11 @@
 ## Breadth-first search
 
 - Breadth-first search is one of the simplest algorithms for searching a graph and the archetype for many important graph algorithms.
-- 
+- Given a graph G D .V; E/ and a distinguished source vertex s, breadth-first search systematically explores the edges of G to “discover” every vertex that is reachable from s.
+- It computes the distance (smallest number of edges) from s to each reachable vertex.
+- It also produces a “breadth-first tree” with root s that contains all reachable vertices.
+- For any vertex  reachable from s, the simple path in the breadth-first tree from s to  corresponds to a “shortest path” from s to  in G, that is, a path containing the smallest number of edges.
+- The algorithm works on both directed and undirected graphs
 
 
 
