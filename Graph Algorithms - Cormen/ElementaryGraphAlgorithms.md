@@ -11,3 +11,29 @@
 - Implementing vertex and edge attributes in real programs can be another story entirely. There is no one best way to store and access vertex and edge attributes.
 - For a given situation, your decision will likely depend on the programming language you are using, the algorithm you are implementing, and how the rest of your program uses the graph.
 - Many other ways of implementing attributes are possible. For example, in an object-oriented programming language, vertex attributes might be represented as instance variables within a subclass of a Vertex class.
+
+## Breadth-first search
+
+- Breadth-first search is one of the simplest algorithms for searching a graph and the archetype for many important graph algorithms.
+- 
+
+
+
+## Depth-first search
+
+
+
+
+## Topological sort
+
+
+
+## Strongly connected components
+
+
+
+
+
+
+
+
